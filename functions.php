@@ -94,5 +94,6 @@ function maera_child_footer_copyright() {
 			&copy; <?php echo date('Y'); ?> Institute for Sustainable Communities
 		</div>
   	</div>
+	<?php
 }
 add_action( 'maera/footer/after', 'maera_child_footer_copyright' );
