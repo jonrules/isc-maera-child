@@ -12,12 +12,65 @@
  Text Domain:  maera-child
 */
 
-@media only screen and (min-width: 992px) {
-	.main {
-		padding-left: 115px;
-	}
-	
-	.main-header {
-		padding-left: 130px;
-	}
+#mobile-menu li {
+        white-space: normal;        
 }
+
+#mobile-menu li:nth-child(2) {
+	display: none;
+}
+
+#mobile-menu a.scroll-spy-link.active {
+	color: red;
+}
+
+#mobile-menu a.scroll-spy-link.h3-link {
+        padding-left: 2rem;
+	font-size: 0.9rem;
+	line-height: 1.5rem;
+	color: #bfbfbf;
+}
+
+#mobile-menu a.scroll-spy-link.h3-link.active {
+	color: red;
+}
+
+.side-nav a, .side-nav.fixed a {
+        line-height: 1rem;
+	padding: 1rem 0;
+	height: auto;
+	color: #666666;
+}
+
+.text-shadow {
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+}
+
+header .sharedaddy {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+.flex-viewport {
+  background-color: #ff5722;
+}
+
+footer {
+	background: #ff5722;
+}
+
+footer .card .card-title {
+	color: #ffffff;
+}
+
+
+@media only screen and (max-width : 600px) {
+}
+
+@media only screen and (min-width : 600px) {
+} 
+
+@media only screen and (min-width : 992px) {
+} 
+

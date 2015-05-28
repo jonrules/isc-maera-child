@@ -1,7 +1,0 @@
-<ul class="side-nav fixed" id="mobile-menu">
-	{% for item in menu.primary.items %}
-		<li id="menu-item-{{item.ID}}" class="menu-item menu-item-type-{{item.type}} menu-item-object-{{item.object}} menu-item-{{item.ID}}{% if 'current-menu-item' in item.classes %} active{% endif %}">
-			<a href="{{item.link}}">{{ item.title }}</a>
-		</li>
-	{% endfor %}
-</ul>

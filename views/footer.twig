@@ -1,7 +1,14 @@
 {#<?php#}
 {% import 'grid_classes.html.twig' as grid %}
 
-<footer class="{{ red|apply_filters('maera/nav/class') }} lighten-2">
+{% if function('is_active_sidebar', 'offcanvas' ) %}
+	<div class="offcanvas-sidebar">
+		<div class="close-button-wrapper sidebar"><span class="close dashicons dashicons-no"></span></div>
+		{{ sidebar.offcanvas }}
+	</div>
+{% endif %}
+
+<footer class="{# {{ red|apply_filters('maera/nav/class') }} lighten-2 #}">
 	{% do action( 'maera/footer/before', post.ID ) %}
 	<div class="page-footer">
 		{% do action( 'maera/footer/start', post.ID ) %}
@@ -16,6 +23,11 @@
 	{% do action( 'maera/footer/after', post.ID ) %}
 </footer>
 {{ function( 'wp_footer' ) }}
+<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+                <a class="btn-floating btn-large red" onclick="jQuery(document.body).animate({ scrollTop: 0 }, 1000);">
+                        <i class="large mdi-navigation-arrow-drop-up"></i>
+                </a>
+        </div>
 <script>
 $(document).ready(function(){
 	$('.parallax').parallax();
@@ -23,7 +35,13 @@ $(document).ready(function(){
 	$("select").material_select();
 	$(".dropdown-button").dropdown();
 	$(".button-collapse").sideNav();
+	$(".collapsible").collapsible();
+	$("#sidenav-overlay").click( function() { this.hide(); } );
 });
+jQuery( document ).ready( function( $ ) {
+    // Relocate Jetpack sharing buttons down into the comments form
+    jQuery( '.sharedaddy-vc' ).html( jQuery( '.sharedaddy' ).detach() );
+} );
 </script>
 </body>
 </html>
