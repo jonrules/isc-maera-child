@@ -62,3 +62,21 @@ function maera_child_header_content( $content ) {
 	return html_entity_decode( $content );
 }
 add_filter( 'theme_mod_header_content', 'maera_child_header_content' );
+
+/**
+ * Register our sidebars and widgetized areas.
+ *
+ */
+function maera_child_widgets_init() {
+
+	register_sidebar( array(
+		'name'          => 'Left Sidebar',
+		'id'            => 'left_sidebar',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="rounded">',
+		'after_title'   => '</h2>',
+	) );
+
+}
+add_action( 'widgets_init', 'maera_child_widgets_init' );
