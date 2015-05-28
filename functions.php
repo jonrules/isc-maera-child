@@ -86,3 +86,13 @@ function maera_child_widgets_context( $context ) {
 	return $context;
 }
 add_filter( 'maera/timber/context', 'maera_child_widgets_context' );
+
+function maera_child_footer_copyright() {
+	?>
+	<div class="footer-copyright">
+		<div class="container">
+			&copy; <?php echo date('Y'); ?> Institute for Sustainable Communities
+		</div>
+  	</div>
+}
+add_action( 'maera/footer/after', 'maera_child_footer_copyright' );
