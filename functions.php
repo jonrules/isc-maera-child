@@ -80,3 +80,9 @@ function maera_child_widgets_init() {
 
 }
 add_action( 'widgets_init', 'maera_child_widgets_init' );
+
+function maera_child_widgets_context( $context ) {
+	$context['left_sidebar'] = Timber::get_widgets( 'left_sidebar' );
+	return $context;
+}
+add_filter( 'maera/timber/context', 'maera_child_widgets_context' );

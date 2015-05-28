@@ -14,7 +14,7 @@ jQuery(function ($) {
 			.attr('href', '#' + $header.attr('id'))
 			.addClass($header[0].tagName.toLowerCase() + '-link');
 		$menuItem.append($menuLink);
-		$menu.append($menuItem);
+		$menuItem.insertBefore($menu.find('.left-sidebar-widget'));
 		$scrollSpyAnchors = $scrollSpyAnchors.add($header);
 	});
 	$scrollSpyAnchors.scrollSpy();
