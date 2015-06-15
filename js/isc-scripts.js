@@ -18,4 +18,22 @@ jQuery(function ($) {
 		$scrollSpyAnchors = $scrollSpyAnchors.add($header);
 	});
 	$scrollSpyAnchors.scrollSpy();
+
+        $('.brand-logo').find('img').each(function () {
+                $(this).data('original-src', this.src);
+        });
+        // Swap image
+        var imageResize = function () {
+                var $img = $('.brand-logo:first').find('img');
+                if ($(window).width() <= 992) {
+                        var src = $img.data('original-src');
+                        var smallSrc = src.replace('.svg', '-small.svg');
+                        $img.attr('src', smallSrc);
+                } else {
+                        $img.attr('src', $img.data('original-src'));
+                }
+        };
+        $(window).resize(imageResize);
+        imageResize();
+
 });
