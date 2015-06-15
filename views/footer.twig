@@ -43,25 +43,5 @@ jQuery( document ).ready( function( $ ) {
     jQuery( '.sharedaddy-vc' ).html( jQuery( '.sharedaddy' ).detach() );
 } );
 </script>
-<script>
-jQuery(function ($) {
-	$('.brand-logo').find('img').each(function () {
-		$(this).data('original-src', this.src);
-	});
-	// Swap image
-	var imageResize = function () {
-		var $img = $('.brand-logo').find('img');
-		if ($(window).width() <= 600) {
-			var src = $img.data('original-src');
-			var smallSrc = src.replace('.png', '-small.png');
-			$img.attr('src', smallSrc);
-		} else {
-			$img.attr('src', $img.data('original-src'));
-		}
-	};
-	$(window).resize(imageResize);
-	imageResize();
-});
-</script>
 </body>
 </html>

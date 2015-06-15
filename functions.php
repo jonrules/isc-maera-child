@@ -89,11 +89,18 @@ add_filter( 'maera/timber/context', 'maera_child_widgets_context' );
 
 function maera_child_footer_copyright() {
 	?>
-	<div class="footer-copyright">
-		<div class="container">
-			&copy; <?php echo date('Y'); ?> Institute for Sustainable Communities
-		</div>
-  	</div>
-	<?php
+        <div class="footer-copyright">
+                <div class="container">
+			<div class="row">
+				<div class="col s12 m4 isc-footer center-on-small-only">
+                        		&copy; <?php echo date('Y'); ?> <a href="http://www.iscvt.org/" target="_blank">Institute for Sustainable Communities</a>
+				</div>
+				<div class="col s12 m8 patterns-footer right-align center-on-small-only">
+					Web Production by <a href="http://patternsinthecloud.com" target="_blank">Patterns In The Cloud</a>
+				</div>
+			</div>
+                </div>
+        </div>
+        <?php 
 }
 add_action( 'maera/footer/after', 'maera_child_footer_copyright' );
